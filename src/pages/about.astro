@@ -11,27 +11,26 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 });
 ---
 
-<Layout title="About">
+<Layout title="Conoce al Bubble Team">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Conoce al Bubble Team</Fragment>
+      <Fragment slot="desc">Somos un pequeño equipo dedicado a ayudar a las personas a reducir su tiempo en pantalla</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Nuestra Misión
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        En Bubble, nos dedicamos a ayudar a las personas a reducir su dependencia del smartphone y a combatir la soledad clínica. Creemos en el poder de la tecnología para mejorar la vida, y trabajamos incansablemente para crear soluciones que hagan precisamente eso.
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
+          <a href={teamMemberEntry.data.link}>
+            <div class="group">
             <div class="w-full aspect-square">
               <Picture
                 src={teamMemberEntry.data.avatar.src}
@@ -50,6 +49,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
               </h3>
             </div>
           </div>
+          </a>
         ))
       }
     </div>

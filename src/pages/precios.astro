@@ -1,0 +1,94 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Limitado",
+    price: "Gratis",
+    popular: false,
+    features: [
+      "Gratis siempre",
+      "Chat con Bubble limitado",
+      "Acceso Básico a Retos",
+      "Estadísticas de Uso",
+      "Puntos y Recompansas",
+    ],
+    button: {
+      text: "Descargar Bubble",
+      link: "https://tally.so/r/3E1E2A",
+    },
+  },
+  {
+    name: "Anual",
+    price: {
+      current: "$499.50 MXN",
+      original: "$999.00 MXN",
+      discount: "50%",
+    },
+    popular: true,
+    features: [
+      "Chat con Bubble Ilimitado",
+      "Acceso a Retos Exclusivos",
+      "Estadísticas Avanzadas",
+      "Recompensas Exclusivas",
+      "Mejor Precio"
+    ],
+    button: {
+      text: "Bubble Premium",
+      link: "https://tally.so/r/3yD26d",
+    },
+  },
+  {
+    name: "Mensual",
+    price: {
+      current: "$49.50 MXN",
+      original: "$99.00 MXN",
+      discount: "50%",
+    },
+    popular: false,
+    features: [
+      "Chat con Bubble Ilimitado",
+      "Acceso a Retos Exclusivos",
+      "Estadísticas Avanzadas",
+      "Recompensas Exclusivas"
+    ],
+    button: {
+      text: "Bubble Premium",
+      link: "https://tally.so/r/3yD26d",
+    },
+  },
+  {
+    name: "Empresas",
+    price: "Personalizado",
+    popular: false,
+    features: [
+      "Todas las Funciones Pro",
+      "Pago por empleado",
+      "Gerente Personalizado",
+      "Soporte 24/7",
+    ],
+    button: {
+      text: "Contáctanos",
+      link: "https://tally.so/r/w2rpag",
+    },
+  },
+];
+---
+
+<Layout title="Precios">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Precios</Fragment>
+      <Fragment slot="desc">
+        Encuentra el mejor plan para ti
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>

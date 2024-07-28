@@ -4,9 +4,16 @@ import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
-/*const menuitems = [
+const menuitems = [
   {
-    title: "Features",
+    title: "App Móvil",
+    children: [
+      { title: "Android", path: "https://tally.so/r/3E1E2A" },
+      { title: "iOS", path: "https://tally.so/r/3E1E2A" },
+    ],
+  },/*
+  {
+    title: "Funciones",
     path: "#",
     children: [
       { title: "Action", path: "/" },
@@ -14,30 +21,29 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
       { title: "Dropdown Submenu", path: "#" },
       { title: "404 Page", path: "/404" },
     ],
+  },*/
+  {
+    title: "Precios",
+    path: "/precios",
   },
   {
-    title: "Pricing",
-    path: "/pricing",
-  },
-  {
-    title: "About",
-    path: "/about",
-  },
+    title: "Acerca de",
+    path: "/acerca-de",
+  },/*
   {
     title: "Blog",
     path: "/blog",
   },
   {
-    title: "Contact",
+    title: "Contacto",
     path: "/contact",
   },
   {
     title: "Pro Version",
     badge: true,
     path: "https://astroship-pro.web3templates.com/",
-  },
-];*/
-const menuitems = [];
+  },*/
+];
 ---
 
 <Container>

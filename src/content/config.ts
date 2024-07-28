@@ -28,6 +28,8 @@ const teamCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
+    link: z.string(),
+    tags: z.array(z.string()),
   }),
 });
 
