@@ -9,8 +9,15 @@ import Sectionhead from "@components/sectionhead.astro";
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
 });
+import portraitChristian from "assets/christian-camacho.jpeg";
+import portraitJesus from "assets/jesus-medina.jpg";
+import portraitKarla from "assets/karla-medina.jpeg";
+const portraits = {
+  "/assets/christian-camacho.jpeg": portraitChristian,
+  "/assets/jesus-medina.jpg": portraitJesus,
+  "/assets/karla-medina.jpeg": portraitKarla
+}
 ---
-
 <Layout title="Acerca de">
   <Container>
     <Sectionhead>
@@ -22,13 +29,13 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
-          publishedTeamMembers.map((blogPostEntry, index) => (
+          publishedTeamMembers.map((teamMember, index) => (
             <li>
-              <a href={`/acerca-de/${blogPostEntry.slug}`}>
+              <a href={`/acerca-de/${teamMember.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
-                    src={blogPostEntry.data.avatar.src}
-                    alt={blogPostEntry.data.avatar.alt}
+                    src={portraits[teamMember.data.avatar.src]}
+                    alt={teamMember.data.avatar.alt}
                     sizes="(max-width: 800px) 100vw, 800px"
                     width={800}
                     height={600}
@@ -38,11 +45,11 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
                   />
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-                      {blogPostEntry.data.title}
+                      {teamMember.data.title}
                     </span>
 
                     <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
-                      {blogPostEntry.data.name}
+                      {teamMember.data.name}
                     </h2>
                   </div>
                 </div>

@@ -5,6 +5,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://astro-bubble.pages.dev/",
   integrations: [tailwind(), mdx(), sitemap()],
 });
