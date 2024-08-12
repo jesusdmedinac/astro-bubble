@@ -9,13 +9,13 @@ import Sectionhead from "@components/sectionhead.astro";
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
 });
-import portraitChristian from "assets/christian-camacho.jpeg";
-import portraitJesus from "assets/jesus-medina.jpg";
-import portraitKarla from "assets/karla-medina.jpeg";
+import portraitChristian from "assets/christian-camacho.png";
+import portraitJesus from "assets/jesus-medina.png";
+import portraitKarla from "assets/karla-medina.png";
 const portraits = {
-  "/assets/christian-camacho.jpeg": portraitChristian,
-  "/assets/jesus-medina.jpg": portraitJesus,
-  "/assets/karla-medina.jpeg": portraitKarla
+  "/assets/christian-camacho.png": portraitChristian,
+  "/assets/jesus-medina.png": portraitJesus,
+  "/assets/karla-medina.png": portraitKarla
 }
 ---
 <Layout title="Acerca de">
